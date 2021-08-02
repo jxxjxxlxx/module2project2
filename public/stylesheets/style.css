@@ -5,11 +5,14 @@
 
 
 body {
-    background-image: url("../images/landing.jpg");
-    background-size: 100vw;
-    background-repeat: no-repeat;
-    background-position: bottom 0%;
     margin: 50px 70px;
+}
+
+#landing{
+  background-image: url("../images/landing.jpg");
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-position: bottom 0%;
 }
 .nav-link {
     display:flex;
