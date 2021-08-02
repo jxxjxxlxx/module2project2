@@ -8,7 +8,10 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+<<<<<<< HEAD
     "cloudinary": "^1.26.3",
+=======
+>>>>>>> 6bb21a616852f09f5036da6f61a6bf5025cd925e
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
