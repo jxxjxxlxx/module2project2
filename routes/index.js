@@ -26,4 +26,7 @@ router.get("/contact-us", (req, res, next) => {
   res.render("contactus.hbs");
 });
 
+router.get("/adopt/add-dog", (req,res,next) => {
+  res.render("addDog.hbs");
+})
 module.exports = router;
