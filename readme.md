@@ -29,23 +29,22 @@ petlove.com is a website where shelters, rescues, and private owners list their 
 ## DB Schemas
 
 - User {  
-  name: String,  
-  lastname: String,  
-  email: String,  
-  password: String  
+   name: String,  
+   lastname: String,  
+   email: String,  
+   password: String,
+  admin:Boolean,
+  favorite: [{type: [Schema.types.ObjectId, ref:"dog_Id" ]}
   }
 
 - Dog {  
+   breed:String,
   name: String,  
-  ref: String,  
-  size: Number,  
+  img:String,
   description: String,  
-  price: Number,  
-  id_tags: [ObjectId]  
-  }
-
-- Tags {  
-  label: String  
+  Location: String,  
+   Adopted: Boolean,  
+   ID_owner: [{String: [Schema.types.ObjectId, ref:"user_Id" ]}
   }
 
 ---
