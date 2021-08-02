@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const petSchema = new Schema({
   breed: String,
   name: String,
-  img: String,
+  image: String,
   description: String,
   location: String,
   adopted: Boolean,
