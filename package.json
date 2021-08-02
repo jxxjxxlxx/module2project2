@@ -2,6 +2,7 @@
   "name": "module2project2",
   "version": "0.0.0",
   "private": true,
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon app.js -e hbs,js"
@@ -11,11 +12,12 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^10.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "hbs": "^4.1.2",
     "http-errors": "~1.6.3",
     "mongoose": "^5.13.5",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.12",
     "session": "^0.1.0"
   }
 }
