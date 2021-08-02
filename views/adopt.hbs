@@ -1,2 +1,11 @@
 <h1>List of dogs:</h1>
-
+<div>
+<ul>
+{{#each dog}}
+    <li>{{this.name}}
+        <p>{{this.breed}}</p>
+    <img src="{{this.image}}" alt={{this.name}}>
+    </li>
+{{/each}}
+</ul>
+</div>

@@ -13,7 +13,12 @@ router.get("/about", (req, res, next) => {
 });
 
 router.get("/adopt", (req, res, next) => {
-  res.render("adopt.hbs");
+  Pet.find()
+  .then((listDog)=>{
+    console.log("list dpog",listDog)
+    res.render("adopt.hbs", {dog:listDog})
+  })
+  .catch(e=>console.log(e));
 });
 router.get("/volunteer", (req, res, next) => {
   res.render("volunteer.hbs");
@@ -28,5 +33,24 @@ router.get("/contact-us", (req, res, next) => {
 
 router.get("/adopt/add-dog", (req,res,next) => {
   res.render("addDog.hbs");
-})
+});
+
+
+router.post("/adopt/add-dog", (req,res,next) => {
+  Pet.create(req.body)
+  .then(()=>{res.redirect ("/adopt")})
+  .catch(e=>console.log(e))
+});
+
+
 module.exports = router;
+
+
+// MyModel.thing()
+// .then((allDocuments) =>{
+//   //
+
+// })
+// .catch(function(e){
+//  //
+// });
