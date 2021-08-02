@@ -8,7 +8,7 @@ const petSchema = new Schema({
   description: String,
   location: String,
   adopted: Boolean,
-  id_owner: { String: Schema.types.ObjectId, ref: "user_Id" },
+  id_owner: {type: Schema.Types.ObjectId, ref: "User"},
 });
 
 const Pet = mongoose.model("Pet", petSchema);
