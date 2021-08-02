@@ -7,7 +7,7 @@ const userSchema = new Schema({
     email: String,  
     password: String,
    admin:Boolean,
-   favorite:{String: Schema.types.ObjectId, ref:"dog_Id" }
+   favorite: [{type: Schema.Types.ObjectId, ref:"Pet"}]
 });
 
 const User = mongoose.model("User", userSchema);

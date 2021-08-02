@@ -1,8 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+* {
+    font-family: 'Noto Sans', sans-serif;;
 }
 
+
+body {
+    background-image: url("../images/landing.jpg");
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: bottom 0%;
+    margin: 50px 70px;
+}
+.nav-link {
+    display:flex;
+    list-style: none;   
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+
+.nav-link >li {
+    padding-left: 30px;
+}
+
+
 a {
-  color: #00B7FF;
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    color: pink;
+  } 
+
+
+.sign {
+    font-size: 1rem;
+}
+
+.home-logo {
+    padding: 20px;
+}
+
+.contact {
+    background-color: hotpink;
+    padding: 5px 15px;
+}
+
+.donate {
+    border-radius: 10px;
+    border-style: dotted;
+    border-color: hotpink;
+    padding: 5px 15px;
+}
+
+.landing-msg {
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 6rem;;
+    padding: 4rem;
 }
