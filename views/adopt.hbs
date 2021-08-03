@@ -1,14 +1,24 @@
-<h1>List of dogs:</h1>
-<div>
+<div class="container">
   <ul>
     {{#each dogs}}
-      <li>{{this.name}}
+    <div class="dogList">
+    <img class="dogPic" src="{{this.image}}" alt="{{this.name}}">
+        <div class="textpart">
+        <li>{{this.name}}
         <p>{{this.breed}}</p>
+        <p>{{this.description}}</p>
         <p>{{this.adopted}}</p>
-    <img src="{{this.image}}" alt="{{this.name}}">
-    </li>
+        </li>
+        </div>
+    </div>
+    <div class="buttonUser">
+        <button><a href = "/adopt/adoption-form">ADOPT ME!</a></button>
+        <button><a href = "/adopt/user-profile">❤️</a></button>
+    </div>
+    <div class="buttonAdmin">
     <button><a href = "/adopt/{{this.id}}/update">Update</a></button>
     <button><a href = "/adopt/{{this.id}}/delete">Delete</a></button>
+    </div>
     <form method="POST"></form>
 {{/each}}
   </ul>
