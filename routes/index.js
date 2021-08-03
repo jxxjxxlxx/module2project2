@@ -16,7 +16,7 @@ router.get("/about", (req, res, next) => {
 router.get("/adopt", (req, res, next) => {
   Pet.find()
   .then((listDog)=>{
-    console.log("list dpog",listDog)
+    console.log("list dog",listDog)
     res.render("adopt.hbs", {dog:listDog})
   })
   .catch(e=>console.log(e));
@@ -55,7 +55,7 @@ router.get("/adopt/:id/update", (req,res,next)=>{
 router.post("/adopt/:id/update", (req,res,next)=>{
   Pet.findByIdAndUpdate(req.params.id, req.body, { new: true })
   .then((updateDog)=>{
-    res.redirect (`/adopt/${updateDog.id}`)
+    res.redirect ("/adopt")
   })
   .catch(e=>console.log(e))
 });
