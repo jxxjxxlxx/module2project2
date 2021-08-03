@@ -1,0 +1,36 @@
+<form method="POST" action="/adopt/{{this._id}}/update">
+<h2>update dog's info</h2>
+<div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{dog.name}}">
+</div>
+<div>
+    <label for="breed">Breed:</label>
+    <input type="text" name="breed" value="{{dog.breed}}">
+</div>
+<div>
+    <label for="location">Location:</label>
+    <input type="text" name="location" value="{{dog.location}}">
+</div>
+<div>
+    <label for="description">Description:</label>
+    <input type="text" name="description" value="{{dog.description}}">
+</div>
+<div>
+    <label for="image" enctype="multipart/form-data" action="/upload">Image:</label>
+    <input type="file" name="image" value="{{dog.image}}">
+</div>
+<div>
+    <p>Is Adopted ?</p>
+</div>
+<div>
+  <input type="radio"  name="adopted" value="yes">
+  <label for="yes">Yes</label>
+</div>
+<div>
+  <input type="radio"  name="adopted" value="no">
+  <label for="no">No</label>
+</div>
+
+<button>Update Dog!</button>
+</form>
