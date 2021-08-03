@@ -11,6 +11,7 @@ const hbs = require("hbs");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
+const adoptRouter = require("./routes/adopt");
 
 const app = express();
 require("./config/session.config")(app);
@@ -29,7 +30,7 @@ hbs.registerPartials(__dirname + "/views/partial");
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/", authRouter);
-
+app.use("/", adoptRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
