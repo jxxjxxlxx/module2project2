@@ -6,7 +6,11 @@ const bcryptjs = require("bcryptjs");
 const saltRounds = 10;
 
 router.get("/signup", (req, res) => res.render("signup"));
-router.get("/userProfile", (req, res) => res.render("user-profile"));
+
+router.get("/userProfile", (req, res) => {
+  res.render("user-profile.hbs", { userInSession: req.session.currentUser });
+});
+
 router.get("/signin", (req, res) => res.render("signin"));
 
 router.post("/signup", (req, res, next) => {
@@ -33,27 +37,41 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.post("/signin", (req, res, next) => {
+  console.log("SESSION=====> ", req.session);
+
   const { email, password } = req.body;
   if (email === "" || password === "") {
+    console.log("No email or not password")
     res.render("signin", {
       errorMessage: "Please enter both, email and password to login.",
     });
     return;
   }
+
   User.findOne({ email })
     .then((user) => {
+      console.log("After user findOne")
+
+
       if (!user) {
+        console.log("In no user found")
         res.render("signin", {
           errorMessage: "Email is not registered. Try with other email.",
         });
         return;
       } else if (bcryptjs.compareSync(password, user.password)) {
-        res.render("user-profile", { user });
+        console.log("Good password");
+        req.session.currentUser = user;
+        res.redirect("/userProfile");
       } else {
+        console.log("Incorrect password")
         res.render("signin", { errorMessage: "Incorrect password." });
       }
     })
-    .catch((error) => next(error));
+    .catch((error) => {
+      console.log("THERE IS AN ERROR ", error)
+      next(error)
+    });
 });
 
 module.exports = router;

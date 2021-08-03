@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/mongodb");
+
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -12,6 +13,7 @@ const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 
 const app = express();
+require("./config/session.config")(app);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
