@@ -1,4 +1,4 @@
-<form method="POST" action="/adopt/add-dog">
+<form method="POST" action="/adopt/add-dog"  enctype="multipart/form-data"  >
 <div>
     <label for="name">Name:</label>
     <input type="text" name="name">
@@ -16,7 +16,7 @@
     <input type="text" name="description">
 </div>
 <div>
-    <label for="image" enctype="multipart/form-data" action="/upload">Image:</label>
+    <label for="image"  action="/upload">Image:</label>
     <input type="file" name="image">
 </div>
 <div>
