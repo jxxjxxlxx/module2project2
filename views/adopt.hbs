@@ -4,7 +4,8 @@
     {{#each dogs}}
       <li>{{this.name}}
         <p>{{this.breed}}</p>
-    <img src="/images/{{this.image}}" alt="{{this.name}}">
+        <p>{{this.adopted}}</p>
+    <img src="{{this.image}}" alt="{{this.name}}">
     </li>
     <button><a href = "/adopt/{{this.id}}/update">Update</a></button>
     <button><a href = "/adopt/{{this.id}}/delete">Delete</a></button>
