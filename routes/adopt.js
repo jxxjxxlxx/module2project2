@@ -26,14 +26,12 @@ router.post("/adopt/add-dog", upload.single("image"), (req, res) => {
   const { name, breed, description, location, adopted } = req.body;
   const newDog = { name, breed, description, location, adopted };
 
-<<<<<<< HEAD
-=======
+
   // console.log(req.file);
   if (req.file) newDog.image = req.file.path;
   console.log(req.file);
   
 
->>>>>>> 1ef1d7075b7726636eadbd63f4fb5920cc555802
   Pet.create(newDog)
 
     .then((newDog) => {
