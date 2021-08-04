@@ -15,7 +15,6 @@ router.get("/about", (req, res, next) => {
 });
 
 
-
 router.get("/volunteer", (req, res, next) => {
   res.render("volunteer.hbs");
 });
