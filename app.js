@@ -24,6 +24,16 @@ require("./config/session.config")(app);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
+app.use((req, res, next) => {
+  if (req.session.currentUser) {
+    res.locals.currentUser = req.session.currentUser;
+    res.locals.isLoggedIn = true;
+  } else {
+    res.locals.currentUser = undefined;
+    res.locals.isLoggedIn = false;
+  }
+  next();
+});
 
 app.use(logger("dev"));
 app.use(express.json());
@@ -32,10 +42,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 hbs.registerPartials(__dirname + "/views/partial");
 
-app.use((req,res,next) => {
+app.use((req, res, next) => {
   console.log(req.session);
   next();
-})
+});
 
 app.use("/", indexRouter);
 app.use("/", usersRouter);
@@ -48,8 +58,6 @@ app.use("/", donateRouter);
 app.use(function (req, res, next) {
   next(createError(404));
 });
-
-
 
 // error handler
 app.use(function (err, req, res, next) {
