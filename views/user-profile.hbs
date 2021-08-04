@@ -1,21 +1,22 @@
+<<<<<<< HEAD
 {{#if userInSession}}
   <h2>Welcome, {{ userInSession.name }}!</h2>
+=======
+
+  <h2>Welcome, {{ currentUser.name }}!</h2>
+>>>>>>> 1ef1d7075b7726636eadbd63f4fb5920cc555802
   <p>This is your profile page</p>
 
-    {{#each doggy}} 
+    {{#each dogs}} 
     
     <ul>
       <li>
-        {{this.id}}
+        {{this.name}}
       </li>
     </ul>
     {{/each}}
   
-  <button>
+  {{!-- <button>
     <a href="/userProfile">Reload the page</a>
-  </button>
+  </button> --}}
 
-
-{{else}}
-  <p>Still no logged in user, sorry!</p>
-{{/if}}

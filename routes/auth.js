@@ -1,11 +1,36 @@
 const { Router } = require("express");
 const router = new Router();
 const User = require("../models/User");
+const Pet = require("../models/Pet");
 
 const bcryptjs = require("bcryptjs");
 const saltRounds = 10;
 
+<<<<<<< HEAD
 //SIGN-IN
+=======
+router.get("/signup", (req, res) => res.render("signup"));
+
+router.get("/userProfile", (req, res) => {
+  // User.findById(req.session.currentUser._id)
+  //   .populate("favorites")
+  //   .then((user) => {
+  //     res.render("user-profile.hbs", { user: user });
+  //   })
+  //   .catch((err) => {
+  //     next(err);
+  //   });
+
+  Pet.find({ _id: req.session.currentUser.favorites })
+    .then((userDogs) => {
+      res.render("user-profile.hbs", { dogs: userDogs });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
+>>>>>>> 1ef1d7075b7726636eadbd63f4fb5920cc555802
 router.get("/signin", (req, res) => res.render("signin"));
 router.post("/signin", (req, res, next) => {
   console.log("SESSION=====> ", req.session);
@@ -44,6 +69,7 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
+<<<<<<< HEAD
 
 
 
@@ -84,8 +110,12 @@ router.post("/signup", (req, res, next) => {
 
 router.post('/signout', (req, res, next) => {
   req.session.destroy(err => {
+=======
+router.post("/signout", (req, res, next) => {
+  req.session.destroy((err) => {
+>>>>>>> 1ef1d7075b7726636eadbd63f4fb5920cc555802
     if (err) next(err);
-    res.redirect('/');
+    res.redirect("/");
   });
 });
 
