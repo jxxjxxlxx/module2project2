@@ -26,10 +26,6 @@ router.get("/contact-us", (req, res, next) => {
   res.render("contactus.hbs");
 });
 
-router.get("/adopt/adoption-form", (req,res,next)=>{
-  res.render("adoptionForm.hbs")
-});
-
 module.exports = router;
 
 

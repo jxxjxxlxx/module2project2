@@ -5,41 +5,8 @@ const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const saltRounds = 10;
 
-router.get("/signup", (req, res) => res.render("signup"));
-
-
-router.get("/userProfile", (req, res) => {
-  res.render("user-profile.hbs", { userInSession: req.session.currentUser });
-});
-
+//SIGN-IN
 router.get("/signin", (req, res) => res.render("signin"));
-
-router.post("/signup", (req, res, next) => {
-  console.log("The form data: ", req.body);
-  const { name, email, password, city, phone, dateofbirth } = req.body;
-
-  bcryptjs
-    .genSalt(saltRounds)
-    .then((salt) => bcryptjs.hash(password, salt))
-    .then((hashedPassword) => {
-      return User.create({
-        name,
-        email,
-        phone,
-        city,
-        dateofbirth,
-        password: hashedPassword,
-      });
-
-      //   console.log(`Password hash: ${hashedPassword}`);
-    })
-    .then((userFromDB) => {
-      console.log("Newly created user is: ", userFromDB);
-      res.redirect("/userProfile");
-    })
-    .catch((error) => next(error));
-});
-
 router.post("/signin", (req, res, next) => {
   console.log("SESSION=====> ", req.session);
 
@@ -77,11 +44,56 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
+
+
+
+
+
+
+//SIGN-UP:
+router.get("/signup", (req, res) => res.render("signup"));
+
+router.post("/signup", (req, res, next) => {
+  console.log("The form data: ", req.body);
+  const { name, email, password, city, phone, dateofbirth } = req.body;
+
+  bcryptjs
+    .genSalt(saltRounds)
+    .then((salt) => bcryptjs.hash(password, salt))
+    .then((hashedPassword) => {
+      return User.create({
+        name,
+        email,
+        phone,
+        city,
+        dateofbirth,
+        password: hashedPassword,
+      });
+
+      //   console.log(`Password hash: ${hashedPassword}`);
+    })
+    .then((userFromDB) => {
+      console.log("Newly created user is: ", userFromDB);
+      res.redirect("/userProfile");
+    })
+    .catch((error) => next(error));
+});
+
+
+//SIGN-OUT:
+
 router.post('/signout', (req, res, next) => {
   req.session.destroy(err => {
     if (err) next(err);
     res.redirect('/');
   });
+});
+
+
+//?
+
+router.get("/userProfile", (req, res) => {
+  res.render("user-profile.hbs", { userInSession: req.session.currentUser });
 });
 
 module.exports = router;

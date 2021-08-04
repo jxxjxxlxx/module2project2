@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const upload = require("../config/cloudinary.config");
 
 router.get("/adopt/:id/adoption-form", (req, res, next) => {
-  Pet.findbyId(req.params.id)
+  Pet.findById(req.params.id)
     .then((idDog) => {
       res.render("adoptionForm.hbs", { keyDog: idDog });
     })
