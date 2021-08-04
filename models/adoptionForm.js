@@ -2,12 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const adoptSchema = new Schema({
-  
-  //age: Number,
-  //address: String,
-  //city: String,
-  //homephone: Number,
-  //cellphone: Number,
+
   household: Boolean,
   caregiver: String,
   housetype: String,
@@ -15,15 +10,16 @@ const adoptSchema = new Schema({
   adult: Number,
   children: Number,
   animal: Boolean,
-  listPets: String,
-  petCurrently: String,
-  petPersonality: String,
+  previousPets: String,
+  currentPets: String,
+  personalityPreference: String,
   crate: Boolean,
-  howManyHours: Number,
+  aloneTime: Number,
   whereAtNight: String,
-  behavior: Boolean,
-  largeBreed: Boolean,
+  isBehaved: Boolean,
   dogClass: Boolean,
+  pet: { type: Schema.Types.ObjectId, ref: "Pet" },
+  user: { type: Schema.Types.ObjectId, ref: "User" },
 });
 
 const Adopt = mongoose.model("Adopt", adoptSchema);

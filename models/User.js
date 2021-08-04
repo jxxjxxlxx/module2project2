@@ -8,6 +8,9 @@ const userSchema = new Schema({
   password: String,
   admin: Boolean,
   favorite: [{ type: Schema.Types.ObjectId, ref: "Pet" }],
+  dateofbirth: Date,
+  city: String,
+  phone: Number,
 });
 
 const User = mongoose.model("User", userSchema);
