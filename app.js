@@ -14,6 +14,8 @@ const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const adoptRouter = require("./routes/adopt");
 const profileRouter = require("./routes/profile");
+const formulaireRouter = require("./routes/formulaire");
+const donateRouter = require("./routes/donate");
 
 const app = express();
 require("./config/session.config")(app);
@@ -40,7 +42,12 @@ app.use("/", usersRouter);
 app.use("/", authRouter);
 app.use("/", adoptRouter);
 app.use("/", profileRouter);
+<<<<<<< HEAD
 
+=======
+app.use("/", formulaireRouter);
+app.use("/", donateRouter);
+>>>>>>> 1790d2e98fff6267bdb669350366d66399e2deeb
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

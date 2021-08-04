@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const adoptSchema = new Schema({
-
   household: Boolean,
   caregiver: String,
   housetype: String,
