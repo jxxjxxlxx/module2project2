@@ -6,9 +6,6 @@ const Pet = require("../models/Pet");
 const bcryptjs = require("bcryptjs");
 const saltRounds = 10;
 
-<<<<<<< HEAD
-//SIGN-IN
-=======
 router.get("/signup", (req, res) => res.render("signup"));
 
 router.get("/userProfile", (req, res) => {
@@ -30,7 +27,6 @@ router.get("/userProfile", (req, res) => {
     });
 });
 
->>>>>>> 1ef1d7075b7726636eadbd63f4fb5920cc555802
 router.get("/signin", (req, res) => res.render("signin"));
 router.post("/signin", (req, res, next) => {
   console.log("SESSION=====> ", req.session);
@@ -69,51 +65,8 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
-<<<<<<< HEAD
-
-
-
-
-
-
-//SIGN-UP:
-router.get("/signup", (req, res) => res.render("signup"));
-
-router.post("/signup", (req, res, next) => {
-  console.log("The form data: ", req.body);
-  const { name, email, password, city, phone, dateofbirth } = req.body;
-
-  bcryptjs
-    .genSalt(saltRounds)
-    .then((salt) => bcryptjs.hash(password, salt))
-    .then((hashedPassword) => {
-      return User.create({
-        name,
-        email,
-        phone,
-        city,
-        dateofbirth,
-        password: hashedPassword,
-      });
-
-      //   console.log(`Password hash: ${hashedPassword}`);
-    })
-    .then((userFromDB) => {
-      console.log("Newly created user is: ", userFromDB);
-      res.redirect("/userProfile");
-    })
-    .catch((error) => next(error));
-});
-
-
-//SIGN-OUT:
-
-router.post('/signout', (req, res, next) => {
-  req.session.destroy(err => {
-=======
 router.post("/signout", (req, res, next) => {
   req.session.destroy((err) => {
->>>>>>> 1ef1d7075b7726636eadbd63f4fb5920cc555802
     if (err) next(err);
     res.redirect("/");
   });
