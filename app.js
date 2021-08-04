@@ -14,6 +14,7 @@ const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const adoptRouter = require("./routes/adopt");
 const profileRouter = require("./routes/profile");
+const formulaireRouter = require("./routes/formulaire");
 
 const app = express();
 require("./config/session.config")(app);
@@ -34,6 +35,7 @@ app.use("/users", usersRouter);
 app.use("/", authRouter);
 app.use("/", adoptRouter);
 app.use("/", profileRouter);
+app.use("/", formulaireRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

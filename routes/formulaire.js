@@ -14,4 +14,12 @@ router.get("/adopt/:id/adoption-form", (req, res, next) => {
 });
 
 
+
+router.post("/adoption-form", (req,res,next) =>{
+  console.log("coucou");
+
+  res.render("submitForm");
+});
+
+
 module.exports = router;

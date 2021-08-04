@@ -7,6 +7,7 @@ const saltRounds = 10;
 
 router.get("/signup", (req, res) => res.render("signup"));
 
+
 router.get("/userProfile", (req, res) => {
   res.render("user-profile.hbs", { userInSession: req.session.currentUser });
 });
