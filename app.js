@@ -13,7 +13,6 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const authRouter = require("./routes/auth");
 const adoptRouter = require("./routes/adopt");
-const profileRouter = require("./routes/profile");
 const formulaireRouter = require("./routes/formulaire");
 const donateRouter = require("./routes/donate");
 
@@ -51,7 +50,6 @@ app.use("/", indexRouter);
 app.use("/", usersRouter);
 app.use("/", authRouter);
 app.use("/", adoptRouter);
-app.use("/", profileRouter);
 app.use("/", formulaireRouter);
 app.use("/", donateRouter);
 // catch 404 and forward to error handler
