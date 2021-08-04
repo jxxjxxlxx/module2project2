@@ -7,7 +7,7 @@ const userSchema = new Schema({
   email: String,
   password: String,
   admin: Boolean,
-  favorite: [{ type: Schema.Types.ObjectId, ref: "Pet" }],
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Pet" }],
   dateofbirth: Date,
   city: String,
   phone: Number,
