@@ -11,8 +11,6 @@ router.get("/adopt", (req, res, next) => {
     .then((listDog)=>{
      
       res.render("adopt.hbs", {dogs:listDog})
-
-
       
     })
     .catch(e=>console.log(e));
@@ -23,9 +21,7 @@ router.get("/adopt/add-dog", (req,res,next) => {
     res.render("addDog.hbs");
   });
   
-  
-
-
+  // Upload image
 
   router.post ("/adopt/add-dog", upload.single("image"), (req, res)=>{
 
@@ -72,7 +68,7 @@ router.get("/adopt/add-dog", (req,res,next) => {
     .catch(e=>console.log(e))
   });
   
-  //Update the dogs list
+  //Delete the dogs 
   router.get("/adopt/:id/delete", (req,res,next)=>{
     Pet.findByIdAndDelete(req.params.id)
     .then(()=>{
