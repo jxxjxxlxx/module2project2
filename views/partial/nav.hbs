@@ -2,9 +2,18 @@
         <div class="nav-up">
             <a class="home-logo" href="/">HOME</a>
             <ul class="nav-link">
+                {{#unless isLoggedIn}}
                 <li><a class="sign" href="/signup">Sign up</a></li>
                 <li><a class="sign" href="/signin">Sign in</a></li>
+                {{/unless}}
 
+             {{#if isLoggedIn}}
+            <p>Hello, {{currentUser.name}}</p>
+            <a href="/user-profile">profile</a>
+            <form id="signout-form" action="/signout" method="POST">
+            <button>Logout</button>
+            </form>
+            {{/if}}
             </ul>
         </div>
         <ul class="nav-link">
