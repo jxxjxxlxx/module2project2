@@ -5,6 +5,7 @@ const User = require("../models/User");
 const mongoose = require("mongoose");
 const upload = require("../config/cloudinary.config");
 
+
 router.get("/adopt", (req, res, next) => {
   Pet.findById(req.params.id)
     .then((dogDoc) => {

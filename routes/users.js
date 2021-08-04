@@ -8,7 +8,7 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/users/:id/favorites/add", (req, res, next) => {
-  console.log("feafafafafeafa", req.session.currentUser);
+  console.log("user", req.session.currentUser);
   console.log("dog ", req.params.id);
 
   User.findByIdAndUpdate(
@@ -27,5 +27,12 @@ router.get("/users/:id/favorites/add", (req, res, next) => {
 
   // res.render("user-profile.hbs")
 });
+
+
+
+
+
+
+
 
 module.exports = router;

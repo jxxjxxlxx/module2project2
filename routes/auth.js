@@ -1,15 +1,30 @@
 const { Router } = require("express");
 const router = new Router();
 const User = require("../models/User");
+const Pet = require("../models/Pet");
 
 const bcryptjs = require("bcryptjs");
 const saltRounds = 10;
 
 router.get("/signup", (req, res) => res.render("signup"));
 
-
 router.get("/userProfile", (req, res) => {
-  res.render("user-profile.hbs", { userInSession: req.session.currentUser });
+  // User.findById(req.session.currentUser._id)
+  //   .populate("favorites")
+  //   .then((user) => {
+  //     res.render("user-profile.hbs", { user: user });
+  //   })
+  //   .catch((err) => {
+  //     next(err);
+  //   });
+
+  Pet.find({ _id: req.session.currentUser.favorites })
+    .then((userDogs) => {
+      res.render("user-profile.hbs", { dogs: userDogs });
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 router.get("/signin", (req, res) => res.render("signin"));
@@ -77,10 +92,10 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
-router.post('/signout', (req, res, next) => {
-  req.session.destroy(err => {
+router.post("/signout", (req, res, next) => {
+  req.session.destroy((err) => {
     if (err) next(err);
-    res.redirect('/');
+    res.redirect("/");
   });
 });
 
