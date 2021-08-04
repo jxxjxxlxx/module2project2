@@ -30,7 +30,7 @@ router.get("/adopt/add-dog", (req,res,next) => {
   router.post ("/adopt/add-dog", upload.single("image"), (req, res)=>{
 
 
-    console.log("COUCOU JE SUIS LA")
+  
 
 
    const {name, breed, description,location,adopted}= req.body;
