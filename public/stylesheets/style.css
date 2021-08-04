@@ -64,3 +64,56 @@ a:hover {
     font-size: 6rem;;
     padding: 4rem;
 }
+
+.dogPic {
+    width: 400px;
+}
+.dogList {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+.buttonAdmin {
+    display: flex;
+    justify-content: center;
+}
+.buttonUser {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.textpart {
+    background-color: rgb(208, 239, 245);
+    width: 400px;
+    text-align: center;
+    list-style: none;
+}
+
+#applicationForm {
+    text-align: center;
+}
+
+#applicationForm >div {
+    padding: 20px;
+}
+
+#applicationForm >h2 {
+    font-size: 30px;
+}
+#applicationForm >h3 {
+    font-size: 25px;
+}
+
+#btn-submit-adopt {
+    background-color: rgb(255, 213, 0);
+    width: 200px;
+    height: 70px;
+    font-size: 20px;
+    margin: 50px;
+}
+.input {
+    height: 25px;
+    border: 2px solid hotpink;
+    border-radius: 5px;
+}
