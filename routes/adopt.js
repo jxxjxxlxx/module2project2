@@ -26,10 +26,12 @@ router.post("/adopt/add-dog", upload.single("image"), (req, res) => {
   const { name, breed, description, location, adopted } = req.body;
   const newDog = { name, breed, description, location, adopted };
 
+
   // console.log(req.file);
   if (req.file) newDog.image = req.file.path;
   console.log(req.file);
   
+
   Pet.create(newDog)
 
     .then((newDog) => {
@@ -66,5 +68,8 @@ router.get("/adopt/:id/delete", (req, res, next) => {
 
     .catch((e) => console.log(e));
 });
+
+
+
 
 module.exports = router;
