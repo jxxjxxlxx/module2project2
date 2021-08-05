@@ -53,7 +53,7 @@ router.get("/adopt/:id/update", (req, res, next) => {
 
 router.post("/adopt/:id/update", (req, res, next) => {
   Pet.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    .then((updateDog) => {
+    .then(() => {
       res.redirect("/adopt");
     })
     .catch((e) => console.log(e));
