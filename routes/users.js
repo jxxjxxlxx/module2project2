@@ -17,7 +17,7 @@ router.get("/users/:id/favorites/add", (req, res, next) => {
       $addToSet: { favorites: req.params.id },
     },
     { new: true }
-  )
+  ).populate("favorites")
     .then((updatedUser) => {
       req.session.currentUser = updatedUser;
 
