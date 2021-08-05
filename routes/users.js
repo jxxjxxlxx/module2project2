@@ -30,9 +30,4 @@ router.get("/users/:id/favorites/add", (req, res, next) => {
 
 
 
-
-
-
-
-
 module.exports = router;
