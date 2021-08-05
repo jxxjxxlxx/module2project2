@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-* {
-    font-family: 'Noto Sans', sans-serif;;
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
 
+/* body */
 * {
     box-sizing: border-box;    
     margin: 0;    
     padding: 0;    
-    text-align: center;   
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+   
+
 }
 
 body {
     margin: 50px 70px;
+  
 }
 .logo {
     width: 180px;
@@ -37,6 +40,7 @@ body {
 .nav-link >li {
     padding-left: 30px;
 }
+
 
 
 a {
@@ -76,7 +80,32 @@ a:hover {
     text-align: center;
     font-size: 6rem;;
     padding: 8rem;
+    font-family: 'Noto Sans', sans-serif;
 }
+
+.about-container-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.about-txt{
+    margin: 0;
+    padding-top: 200px;
+    width: 40vw;
+}
+
+.about-dog-img{
+    padding-top: 100px;
+    width: 20vw;
+}
+
+.about-dog{
+    display: flex;
+    justify-content: center;
+    
+}
+/* ADOPT DOGS PART */
 
 .dogPic {
     width: 400px;
@@ -103,6 +132,8 @@ a:hover {
     list-style: none;
     padding: 200px 0px;
 }
+
+/* FORM */
 
 #applicationForm {
     text-align: center;
@@ -139,6 +170,8 @@ a:hover {
 #container1 {
     display: flex;
 }
+
+/* AUHTENTIFICATION */
 
 .welcomeUser {
     position: absolute;
