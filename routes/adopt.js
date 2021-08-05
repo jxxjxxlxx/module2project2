@@ -23,18 +23,17 @@ router.get("/adopt/add-dog", (req, res, next) => {
 router.post("/adopt/add-dog", upload.single("image"), (req, res) => {
   console.log("COUCOU JE SUIS LA");
 
-  const { name, breed, description, location, adopted } = req.body;
-  const newDog = { name, breed, description, location, adopted };
+
 
 
   // console.log(req.file);
-  if (req.file) newDog.image = req.file.path;
-  console.log(req.file);
+  if (req.file) req.body.image = req.file.path;
+  //console.log("www: ", req.file);
   
 
-  Pet.create(newDog)
+  Pet.create(req.body)
 
-    .then((newDog) => {
+    .then(() => {
       res.redirect("/adopt");
     })
     .catch((error) => console.log(`Error while creating new dog:${error}`));
@@ -51,7 +50,12 @@ router.get("/adopt/:id/update", (req, res, next) => {
     .catch((e) => console.log(e));
 });
 
-router.post("/adopt/:id/update", (req, res, next) => {
+router.post("/adopt/:id/update", upload.single("image"),(req, res, next) => {
+
+
+
+  if(req.file) req.body.image = req.file.path;
+   
   Pet.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((updateDog) => {
       res.redirect("/adopt");
