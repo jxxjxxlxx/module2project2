@@ -4,10 +4,16 @@
 }
 
 * {
+<<<<<<< HEAD
     box-sizing: border-box;    
     margin: 0;    
     padding: 0;    
     text-align: center;   
+=======
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+>>>>>>> c2d40d3b114867c5947804da21c4e80a9d0a829d
 }
 
 body {
