@@ -1,4 +1,4 @@
-<form action="/adoption-form" method="POST">
+<form action="/adopt/:id/adoption-form" method="POST">
 <div id="applicationForm">
     {{> dogDescription dog=keyDog}}
 
@@ -125,6 +125,6 @@
   <label for="accept">I agree !</label>
 </div>
 
-<button id="btn-submit-adopt">Submit my application</button>
+<button type="submit" id="btn-submit-adopt">Submit my application</button>
 </div>
 </form>
