@@ -7,6 +7,12 @@
 body {
     margin: 50px 70px;
 }
+.logo {
+    width: 180px;
+    position: absolute;
+    left: 80px;
+    top: 50px;
+}
 
 #landing{
   background-image: url("../images/landing.jpg");
@@ -31,6 +37,7 @@ a {
     text-decoration: none;
     color: black;
     font-size: 1.5rem;
+    padding: 20px;
 }
 
 a:hover {
@@ -46,23 +53,23 @@ a:hover {
     padding: 20px;
 }
 
-.contact {
+/* .contact {
     background-color: hotpink;
     padding: 5px 15px;
-}
+} */
 
-.donate {
+/* .donate {
     border-radius: 10px;
     border-style: dotted;
     border-color: hotpink;
     padding: 5px 15px;
-}
+} */
 
 .landing-msg {
     font-variant: small-caps;
     text-align: center;
     font-size: 6rem;;
-    padding: 4rem;
+    padding: 8rem;
 }
 
 .dogPic {
@@ -88,6 +95,7 @@ a:hover {
     width: 400px;
     text-align: center;
     list-style: none;
+    padding: 200px 0px;
 }
 
 #applicationForm {
@@ -116,4 +124,44 @@ a:hover {
     height: 25px;
     border: 2px solid hotpink;
     border-radius: 5px;
+}
+
+.profileDog {
+   width: 200px;
+}
+
+#container1 {
+    display: flex;
+}
+
+.welcomeUser {
+    position: absolute;
+    right: 250px;
+    top: 15px;
+    font-size: 20px;
+}
+.profilepage {
+    position:absolute;
+    right: 150px;
+    top:20px;
+}
+.logout {
+    background-color: pink;
+    border-style: none;
+    position: absolute;
+    top: 50px;
+    right: 80px;
+}
+.buttonUser {
+    display: flex;
+    justify-content: space-evenly;
+}
+.adoptme-btn {
+    color: pink;
+    border-radius: 10px;
+    border-style: dotted;
+    border-color: skyblue;
+}
+.favoris-btn {
+    width: 38px;
 }

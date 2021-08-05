@@ -27,6 +27,7 @@ app.use((req, res, next) => {
   if (req.session.currentUser) {
     res.locals.currentUser = req.session.currentUser;
     res.locals.isLoggedIn = true;
+    console.log("logged in")
   } else {
     res.locals.currentUser = undefined;
     res.locals.isLoggedIn = false;
