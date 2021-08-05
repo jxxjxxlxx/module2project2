@@ -12,22 +12,12 @@
         </div>
     </div>
     <div class="buttonUser">
-
-      {{!-- {{#unless isLoggedIn}} --}}
       
         <a class="adoptme-btn" href = "/adopt/{{this.id}}/adoption-form">ADOPT ME!</a>
         <a href = "/users/{{this.id}}/favorites/add"><img class="favoris-btn" src="https://img.icons8.com/color/48/000000/like--v2.png"/></a>
-        {{!-- <a class="adoptme-btn" href = "/signin">ADOPT ME!</a>
-        <a href = "/signin"><img class="favoris-btn" src="https://img.icons8.com/color/48/000000/like--v2.png"/></a> --}}
-      {{!-- {{/unless}} --}}
-{{!-- 
-        {{#if isLoggedIn}}        
-        <a href = "/adopt/adoption-form">ADOPT ME!</a>
-        <a href = "/users/{{this.id}}/favorites/add"><img class="favoris-btn" src="https://img.icons8.com/color/48/000000/like--v2.png"/></a>
-        {{/if}} --}}
-
 
     </div>
+
     <div class="buttonAdmin">
     <button><a href = "/adopt/{{this.id}}/update">Update</a></button>
     <button><a href = "/adopt/{{this.id}}/delete">Delete</a></button>

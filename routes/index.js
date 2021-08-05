@@ -7,13 +7,12 @@ const User = require("../models/User");
 /* GET home page. */
 
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "PETLOVE" });
 });
 
 router.get("/about", (req, res, next) => {
   res.render("about.hbs");
 });
-
 
 router.get("/volunteer", (req, res, next) => {
   res.render("volunteer.hbs");
@@ -25,6 +24,7 @@ router.get("/donate", (req, res, next) => {
 router.get("/contact-us", (req, res, next) => {
   res.render("contactus.hbs");
 });
+
 
 module.exports = router;
 
