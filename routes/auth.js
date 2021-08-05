@@ -6,27 +6,9 @@ const Pet = require("../models/Pet");
 const bcryptjs = require("bcryptjs");
 const saltRounds = 10;
 
-router.get("/signup", (req, res) => res.render("signup"));
 
-router.get("/userProfile", (req, res) => {
-  // User.findById(req.session.currentUser._id)
-  //   .populate("favorites")
-  //   .then((user) => {
-  //     res.render("user-profile.hbs", { user: user });
-  //   })
-  //   .catch((err) => {
-  //     next(err);
-  //   });
 
-  Pet.find({ _id: req.session.currentUser.favorites })
-    .then((userDogs) => {
-      res.render("user-profile.hbs", { dogs: userDogs });
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
-
+//signin part
 router.get("/signin", (req, res) => res.render("signin"));
 router.post("/signin", (req, res, next) => {
   console.log("SESSION=====> ", req.session);
@@ -65,6 +47,36 @@ router.post("/signin", (req, res, next) => {
     });
 });
 
+//sign up part
+router.get("/signup", (req, res) => res.render("signup"));
+
+router.post("/signup", (req, res, next) => {
+  console.log("The form data: ", req.body);
+  const { name, email, password, city, phone, dateofbirth } = req.body;
+  bcryptjs
+    .genSalt(saltRounds)
+    .then((salt) => bcryptjs.hash(password, salt))
+    .then((hashedPassword) => {
+      return User.create({
+        name,
+        email,
+        phone,
+        city,
+        dateofbirth,
+        password: hashedPassword,
+      });
+      //   console.log(`Password hash: ${hashedPassword}`);
+    })
+    .then((userFromDB) => {
+      console.log("Newly created user is: ", userFromDB);
+      res.redirect("/signin");
+    })
+    .catch((error) => next(error));
+});
+
+
+
+//signout part
 router.post("/signout", (req, res, next) => {
   req.session.destroy((err) => {
     if (err) next(err);
@@ -73,10 +85,20 @@ router.post("/signout", (req, res, next) => {
 });
 
 
-//?
+//Profile page
+
+
+
 
 router.get("/userProfile", (req, res) => {
-  res.render("user-profile.hbs", { userInSession: req.session.currentUser });
+
+  Pet.find({ _id: req.session.currentUser.favorites })
+    .then((userDogs) => {
+      res.render("user-profile.hbs", { dogs: userDogs });
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 module.exports = router;
