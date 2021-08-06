@@ -22,6 +22,7 @@ router.post("/signin", (req, res, next) => {
     return;
   }
 
+
   User.findOne({ email })
     .then((user) => {
       console.log("After user findOne");
