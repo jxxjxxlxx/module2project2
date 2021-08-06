@@ -35,7 +35,11 @@ router.post("/signin", (req, res, next) => {
         return;
       } else if (bcryptjs.compareSync(password, user.password)) {
         console.log("Good password");
+        if (user.admin) {
+          console.log("admin logged in")
+        } else {console.log("User logged in")};
         req.session.currentUser = user;
+        req.session.admin = true;
         res.redirect("/userProfile");
       } else {
         console.log("Incorrect password");
@@ -49,6 +53,12 @@ router.post("/signin", (req, res, next) => {
 });
 
 //sign up part
+
+function checkAdmin(email){
+  const domain = email.substring(email.lastIndexOf("@") +1);
+  return (domain === 'petlove.com');
+}
+
 router.get("/signup", (req, res) => res.render("signup"));
 
 router.post("/signup", (req, res, next) => {
@@ -65,6 +75,7 @@ router.post("/signup", (req, res, next) => {
         city,
         dateofbirth,
         password: hashedPassword,
+        admin: checkAdmin(email),
       });
       //   console.log(`Password hash: ${hashedPassword}`);
     })

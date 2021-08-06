@@ -9,7 +9,7 @@ const upload = require("../config/cloudinary.config");
 router.get("/adopt", (req, res, next) => {
   Pet.find()
     .then((listDog) => {
-      res.render("adopt.hbs", { dogs: listDog });
+      res.render("adopt.hbs", { dogs: listDog, user: req.session.currentUser });
     })
     .catch((e) => console.log(e));
 });
