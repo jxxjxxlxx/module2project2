@@ -333,6 +333,9 @@ a:hover {
     font-size: 50px;
     color: rgb(251, 140, 195);
 }
+.userProfile {
+    padding: 100px;
+}
 
 /*footer*/
 
