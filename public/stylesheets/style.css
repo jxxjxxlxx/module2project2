@@ -6,10 +6,9 @@
     box-sizing: border-box;    
     margin: 0;    
     padding: 0;    
+    /* font-family: 'Noto Sans', sans-serif; */
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 30px;
-   
-
 }
 
 body {
@@ -36,17 +35,17 @@ body {
     justify-content: flex-end;
 }
 
-
 .nav-link >li {
     padding-left: 30px;
+
 }
+
 
 
 
 a {
     text-decoration: none;
     color: black;
-    font-size: 1.5rem;
     padding: 20px;
 }
 
@@ -56,7 +55,11 @@ a:hover {
 
 
 .sign {
-    font-size: 1rem;
+    font-size: 18px;
+    position: relative;
+    top: -25px;
+    color: gray;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .home-logo {
@@ -78,17 +81,20 @@ a:hover {
 .landing-msg {
     font-variant: small-caps;
     text-align: center;
-    font-size: 6rem;;
+    font-size: 2.8rem;;
     padding: 8rem;
     font-family: 'Noto Sans', sans-serif;
 }
 
+/*about page*/
 .about-container-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
-
+.aboutTitle {
+    color:pink;
+}
 .about-txt{
     margin: 0;
     padding-top: 200px;
@@ -131,6 +137,94 @@ a:hover {
     text-align: center;
     list-style: none;
     padding: 200px 0px;
+}
+/*volunteer*/
+#volunteerContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 100px;
+    text-align: center;
+}
+.volunteerImg {
+    width: 20vw;
+    border-radius: 20px;
+}
+.volunteerTitle{
+    text-align: center;
+    padding-top: 80px;
+    font-style: italic;
+    color: pink;
+    font-size: 30px;
+}
+.volunteerText >h2 {
+    font-size: 40px;
+    color: darkgray
+}
+.volunteerText {
+    color: gray;
+    border: 10px solid;
+    border-radius: 20px;
+    width: 30vw;
+    height: 50vh;
+    padding: 50px;
+    margin: 50px;
+    align-self: center;
+    justify-self: center;
+}
+.help {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    color: skyblue
+}
+.shelterInfo {
+    text-align: center;
+    display: inline;
+    justify-items: center;
+}
+.joinus {
+    text-align: center;
+    font-size: 1.5rem;
+    color: pink;
+    padding: 80px;
+}
+/*donate*/
+.donateContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    color: gray;
+}
+.donationTitle {
+    font-size: 75px;
+    color: black;
+    padding-bottom: 50px;
+}
+.donateContainer >div {
+    padding: 40px;
+    border: 7px solid gray;
+    border-radius: 30px;
+    margin: 30px;
+    width: 80vw;
+}
+.sponsor {
+    font-size: 45px;
+    color: rgb(87, 87, 87);
+}
+.donationText {
+    font-size: 45px;
+    padding-bottom: 10px;
+    color: rgb(87, 87, 87);
+}
+.linkDonate {
+    color: pink;
+    padding: 10px;
+    font-size: 37px;
+}
+.linkDonate >a:hover {
+    color: skyblue;
+    font-size: 37px;    
 }
 
 /* FORM */
@@ -202,9 +296,37 @@ a:hover {
     border-color: skyblue;
 }
 .favoris-btn {
-    width: 38px;
+    width: 40px;
 }
 
 .formImage {
     width: 200px;
 }
+/*contact*/
+.iconContact {
+    width: 60px;
+}
+.contactContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 200px;
+    /* border: 10px solid pink;
+    border-radius: 30px; */
+    padding: 30px;
+}
+.contactContainer >p {
+    justify-items: center;
+    text-align: center;
+    padding: 10px;
+    color: gray;
+}
+.contactContainer >h2 {
+    justify-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 50px;
+    color: rgb(251, 140, 195);
+}
+
+/*footer*/
+
