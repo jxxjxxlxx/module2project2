@@ -127,6 +127,12 @@ a:hover {
     justify-content: center;
     margin: 50px;
 }
+.dogName {
+    font-size:1rem;
+}
+.textpart >p {
+    font-size:0.7rem;
+}
 .buttonAdmin {
     display: flex;
     justify-content: center;
@@ -301,21 +307,23 @@ input{
 
 .welcomeUser {
     position: absolute;
-    right: 250px;
-    top: 15px;
+    right: 230px;
+    top: 60px;
     font-size: 20px;
 }
 .profilepage {
     position:absolute;
-    right: 150px;
-    top:20px;
+    right: 165px;
+    top: 35px;
 }
 .logout {
     background-color: pink;
     border-style: none;
     position: absolute;
-    top: 50px;
+    padding: 0px 5px;
+    top: 55px;
     right: 80px;
+    font-size: 25px;
 }
 .buttonUser {
     display: flex;
