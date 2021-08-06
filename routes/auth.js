@@ -89,8 +89,6 @@ router.post("/signout", (req, res, next) => {
 //Profile page
 
 
-
-
 router.get("/userProfile", (req, res) => {
 
   Pet.find({ _id: req.session.currentUser.favorites })
