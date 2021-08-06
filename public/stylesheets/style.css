@@ -90,7 +90,7 @@ a:hover {
 .about-container-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-gap: 10px;
 }
 .aboutTitle {
     color:pink;
@@ -166,7 +166,7 @@ a:hover {
     border-radius: 20px;
     width: 30vw;
     height: 50vh;
-    padding: 50px;
+    padding: 30px;
     margin: 50px;
     align-self: center;
     justify-self: center;
@@ -192,20 +192,24 @@ a:hover {
 .donateContainer {
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 100px;
     color: gray;
 }
 .donationTitle {
     font-size: 75px;
     color: black;
-    padding-bottom: 50px;
+    padding: 150px;
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    position: relative
 }
 .donateContainer >div {
     padding: 40px;
     border: 7px solid gray;
     border-radius: 30px;
-    margin: 30px;
+    margin: 0px 30px;
     width: 80vw;
 }
 .sponsor {
@@ -219,7 +223,7 @@ a:hover {
 }
 .linkDonate {
     color: pink;
-    padding: 10px;
+    padding: 120px;
     font-size: 37px;
 }
 .linkDonate >a:hover {
