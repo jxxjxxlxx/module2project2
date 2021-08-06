@@ -2,34 +2,44 @@
   <h2>Signup</h2>
   <form action="/signup" method="POST">
 
-    <label>
-      Username
-      <input type="text" name="name" placeholder="..." />
-    </label>
+<div class="space-div">
+      <label>Username</label>
+    <input type="text" name="name" placeholder="..." />
+</div>
 
-    <label>
-      Email
-      <input type="email" name="email" placeholder="@ironhack.com" />
-    </label>
+<div class="space-div">
+     <label> Email </label>
+  <input type="email" name="email" placeholder="@ironhack.com" />
+</div>
+ 
+ <div class="space-div">
+   <label> Password</label>
+     <input type="password" name="password" placeholder="********" />
+ </div>
+    
 
-    <label>
-      Password
-      <input type="password" name="password" placeholder="********" />
-    </label>
-    <label>City
-      <input type="city" name="city" placeholder="*****" />
-    </label>
-    <label>Phone
-      <input type="phone" name="phone" placeholder="*****" />
-    </label>
-    <label>Date of birth
-      <input type="date" name="dateofbirth" placeholder="*****" />
-    </label>
+<div class="space-div">
+  <label>City</label>
+     <input type="city" name="city" placeholder="*****" />
+</div>
+
+    
+
+<div class="space-div">
+  <label>Phone</label>
+     <input type="phone" name="phone" placeholder="*****" /></div>
+<div>
+    <label>Date of birth </label>
+    <input type="date" name="dateofbirth" placeholder="*****" />   
+</div>
+  
+   
 
     <button type="submit">Sign-up</button>
+    <br>
 
-    <p>Already have an account ? <a href="/signin">Login!</a>
-    </p>
+    <small>Already have an account ? <a href="/signin">Login!</small>
+  
     
 
     {{! error message will be added here }}

@@ -141,10 +141,11 @@ a:hover {
     padding: 200px 0px;
 }
 /*volunteer*/
+
 #volunteerContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 100px;
+    grid-gap: 25px;
     text-align: center;
 }
 .volunteerImg {
@@ -161,13 +162,14 @@ a:hover {
 .volunteerText >h2 {
     font-size: 40px;
     color: darkgray
+   
 }
 .volunteerText {
     color: gray;
     border: 10px solid;
     border-radius: 20px;
     width: 30vw;
-    height: 50vh;
+    height: 60vh;
     padding: 30px;
     margin: 50px;
     align-self: center;
@@ -234,6 +236,23 @@ a:hover {
 }
 
 /* FORM */
+
+#form{
+    padding-top: 100px;
+}
+
+small{
+    font-size: 20px;
+}
+
+input{
+    border: 0;
+    box-shadow: none;
+}
+
+.space-div{
+    margin: 50px 0;
+}
 
 #applicationForm {
     text-align: center;
