@@ -390,7 +390,7 @@ input{
     border: 6px solid #F6F6F6;
 }
 
-footer ul{
+/* footer ul{
 color:pink;
 list-style: none;
 display: flex;
@@ -410,8 +410,21 @@ width: 100vw;
 margin: 0;
 padding: 0;
 position: absolute;
-bottom: 0;
+bottom: 0; */
 
-}
+/* } */
 /*footer*/
+#logo-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 15px;
+    padding-left: 54em;
+    position: absolute;
+  }
+  
+  #logo-ul li {
+    padding: 12px;
+  }
 
