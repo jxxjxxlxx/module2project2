@@ -13,8 +13,8 @@
 
 body {
     margin: 50px 70px;
-  
 }
+
 .logo {
     width: 180px;
     position: absolute;
@@ -93,6 +93,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    margin: 60px;
 }
 .aboutTitle {
     color:pink;
@@ -155,7 +156,7 @@ a:hover {
     text-align: center;
 }
 .volunteerImg {
-    width: 20vw;
+    width: 20.5vw;
     border-radius: 20px;
 }
 .volunteerTitle{
@@ -310,7 +311,7 @@ input{
     top: 35px;
 }
 .logout {
-    background-color: pink;
+    background-color: #f79cce;
     border-style: none;
     position: absolute;
     padding: 0px 5px;
